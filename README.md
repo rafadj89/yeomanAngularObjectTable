@@ -1,0 +1,2 @@
+# yeomanAngularObjectTable
+Implementaci
