@@ -1,0 +1,31 @@
+<div class="container" ng-controller="AboutCtrl as about">
+
+  <a ng-click="about.clickToOpen()" ><span>New About</span> </a>
+
+  <table object-table
+  	data = "about.dataAbouts"
+  	display = "5"
+  	headers = "Name,Eye color,Age,Option"
+  	fields = "name,eyeColor,age"
+    selected-model="modal.report.selected"
+    sorting = "compound"
+  	editable = "true"
+  	on-edit="about.logChange($oldValue,$newValue)">
+    <tbody>
+        <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.eyeColor}}</td>
+            <td>{{item.age}}</td>
+            <td style="width: 150px; height: 50px; vertical-align: middle;">
+                <div class="example-box-wrapper">
+                    <a ng-click="$owner.about.onSave(item)" href="">
+                        <button class="btn btn-primary">
+                            <i class="glyphicon glyphicon-ok"></i>
+                        </button>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
